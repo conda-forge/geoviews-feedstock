@@ -36,7 +36,7 @@ test:
 about:
   home: http://geoviews.org
   license: BSD 3-Clause
-  license_file: LICENSE
+  # license_file: LICENSE  # license is not packages in the source tarball :-(
   summary: 'GeoViews is a Python library that makes it easy to explore and visualize geographical'
 
 extra:
