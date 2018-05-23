@@ -1,7 +1,7 @@
 About geoviews
 ==============
 
-Home: https://github.com/ioam/geoviews
+Home: http://geoviews.org
 
 Package license: BSD 3-Clause
 
@@ -14,12 +14,15 @@ Summary: GeoViews is a Python library that makes it easy to explore and visualiz
 Current build status
 ====================
 
-All platforms: [![Circle CI](https://circleci.com/gh/conda-forge/geoviews-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/geoviews-feedstock)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/geoviews-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/geoviews-feedstock)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/geoviews/badges/version.svg)](https://anaconda.org/conda-forge/geoviews)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/geoviews/badges/downloads.svg)](https://anaconda.org/conda-forge/geoviews)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-geoviews-green.svg)](https://anaconda.org/conda-forge/geoviews) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/geoviews.svg)](https://anaconda.org/conda-forge/geoviews) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/geoviews.svg)](https://anaconda.org/conda-forge/geoviews) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/geoviews.svg)](https://anaconda.org/conda-forge/geoviews) |
 
 Installing geoviews
 ===================
