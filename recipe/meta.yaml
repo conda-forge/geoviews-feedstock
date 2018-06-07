@@ -15,7 +15,7 @@ requirements:
     - pip
     - param >=1.6.1,<2.0
   run:
-    - python >= 2.7
+    - python >=2.7
     - datashader
     - gdal
     - geopandas
