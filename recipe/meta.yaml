@@ -1,8 +1,7 @@
-{% set name = "geoviews" %}
 {% set version = "1.5.1" %}
 
 package:
-  name: {{ name }}
+  name: geoviews
   version: {{ version }}
 
 build:
