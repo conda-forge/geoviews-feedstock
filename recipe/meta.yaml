@@ -43,7 +43,7 @@ test:
 about:
   home: http://geoviews.org
   license: BSD 3-Clause
-  license_file: LICENSE
+  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE'
   summary: GeoViews is a Python library that makes it easy to explore and visualize
         geographical, meteorological, and oceanographic datasets, such as those used
         in weather, climate, and remote sensing research.
