@@ -1,12 +1,12 @@
 {% set name = "geoviews" %}
-{% set version = "1.5.0" %}
+{% set version = "1.5.1" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 build:
-  number: 1
+  number: 0
   noarch: python
 
 requirements:
@@ -44,7 +44,7 @@ test:
 about:
   home: http://geoviews.org
   license: BSD 3-Clause
-  # license_file: LICENSE  # license is not packages in the source tarball :-(
+  license_file: LICENSE
   summary: GeoViews is a Python library that makes it easy to explore and visualize
         geographical, meteorological, and oceanographic datasets, such as those used
         in weather, climate, and remote sensing research.
