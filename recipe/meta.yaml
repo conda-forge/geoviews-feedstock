@@ -1,53 +1,150 @@
-{% set version = "1.5.1" %}
+{% set version = "1.6.1" %}
 
 package:
-  name: geoviews
+  name: geoviews-split
   version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/g/geoviews/geoviews-{{ version }}.tar.gz
+  sha256: 32a2db1590d51f70b010454c3791dd80ead1c2e28f2140c8f8a32902b1cc4926
 
 build:
   number: 0
   noarch: python
 
 requirements:
-  build:
-    - python
+  host:
+    - python >=2.7
     - pip
     - param >=1.6.1,<2.0
   run:
     - python >=2.7
+    - bokeh >=1.0.0
+    - cartopy >=0.16.0
+    - holoviews >=1.11.0
+    - numpy >=1.0
+    - param >=1.6.1,<2.0
+    # - geoviews-core ={{ version }}
     - datashader
-    - gdal
     - geopandas
-    - geoviews-core ={{ version }}
-    - jupyter
-    - libgdal
-    - matplotlib
+    - gdal
     - netcdf4 <1.4.0
+    - jupyter
+    - matplotlib >2.2
     - pandas
     - pyct
     - scipy
     - shapely
     - xarray
 
-test:
-  imports:
-    - geoviews
-  requires:
-    - nbsmoke
-    - pytest
-  commands:
-    - geoviews examples --path=. --force
-    # just run one notebook for now; increase in the future if notebooks can be run quickly with test/tiny data
-    - pytest --nbsmoke-run -k ".ipynb" user_guide/Geometries.ipynb
+outputs:
+  - name: geoviews-core
+    script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+    build:
+      noarch: python
+      entry_points:
+        - geoviews = geoviews.__main__:main       
+    requirements:
+      run_constrained:
+        - geoviews {{ version }}
+      host:
+        - python >=2.7
+        - pip
+        - param >=1.6.1,<2.0
+      run:
+        - python >=2.7
+        - bokeh >=1.0.0
+        - cartopy >=0.16.0
+        - holoviews >=1.11.0
+        - numpy >=1.0
+        - param >=1.6.1,<2.0
+    test:
+      imports:
+        - geoviews
+
+  - name: geoviews
+    build:
+      noarch: python
+      entry_points:
+        - geoviews = geoviews.__main__:main       
+    requirements:
+      run_constrained:
+        - geoviews {{ version }}
+      host:
+        - python >=2.7
+        - pip
+        - param >=1.6.1,<2.0
+      run:
+        - python >=2.7
+        - bokeh >=1.0.0
+        - cartopy >=0.16.0
+        - holoviews >=1.11.0
+        - numpy >=1.0
+        - param >=1.6.1,<2.0
+    test:
+      imports:
+        - geoviews
+    about:
+      home: https://geoviews.org
+      license: BSD-3-Clause
+      license_family: BSD
+      license_file: LICENSE
+      summary: GeoViews is a Python library that makes it easy to explore and visualize
+            geographical, meteorological, and oceanographic datasets, such as those used
+            in weather, climate, and remote sensing research
+
+  - name: geoviews
+    build:
+      noarch: python
+    requirements:
+      host:
+        - python >=2.7
+        - pip
+        - param >=1.6.1,<2.0
+      run:
+        - python >=2.7
+        - bokeh >=1.0.0
+        - cartopy >=0.16.0
+        - holoviews >=1.11.0
+        - numpy >=1.0
+        - param >=1.6.1,<2.0
+        - geoviews-core {{ version }}
+        - datashader
+        - geopandas
+        - gdal
+        - netcdf4
+        - jupyter
+        - matplotlib >2.2
+        - pandas
+        - pyct
+        - scipy
+        - shapely
+        - xarray
+    test:
+      imports:
+        - geoviews
+      requires:
+        - nbsmoke
+        - pytest
+      commands:
+        - geoviews examples --path=. --force
+        # just run one notebook for now; increase in the future if notebooks can be run quickly with test/tiny data
+        - pytest --nbsmoke-run -k ".ipynb" user_guide/Geometries.ipynb
+    about:
+      home: http://geoviews.org
+      license: BSD-3-Clause
+      license_file: LICENSE
+      summary: GeoViews is a Python library that makes it easy to explore and visualize
+            geographical, meteorological, and oceanographic datasets, such as those used
+            in weather, climate, and remote sensing research.
 
 about:
   home: http://geoviews.org
-  license: BSD 3-Clause
-  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE'
+  license: BSD-3-Clause
+  license_file: LICENSE
   summary: GeoViews is a Python library that makes it easy to explore and visualize
         geographical, meteorological, and oceanographic datasets, such as those used
         in weather, climate, and remote sensing research.
-
 extra:
   recipe-maintainers:
     - ocefpaf
