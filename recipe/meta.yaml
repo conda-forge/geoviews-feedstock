@@ -24,7 +24,6 @@ requirements:
     - holoviews >=1.11.0
     - numpy >=1.0
     - param >=1.6.1,<2.0
-    # - geoviews-core ={{ version }}
     - datashader
     - geopandas
     - gdal
@@ -65,42 +64,12 @@ outputs:
   - name: geoviews
     build:
       noarch: python
-      entry_points:
-        - geoviews = geoviews.__main__:main       
-    requirements:
-      run_constrained:
-        - geoviews {{ version }}
-      host:
-        - python >=2.7
-        - pip
-        - param >=1.6.1,<2.0
-      run:
-        - python >=2.7
-        - bokeh >=1.0.0
-        - cartopy >=0.16.0
-        - holoviews >=1.11.0
-        - numpy >=1.0
-        - param >=1.6.1,<2.0
-    test:
-      imports:
-        - geoviews
-    about:
-      home: https://geoviews.org
-      license: BSD-3-Clause
-      license_family: BSD
-      license_file: LICENSE
-      summary: GeoViews is a Python library that makes it easy to explore and visualize
-            geographical, meteorological, and oceanographic datasets, such as those used
-            in weather, climate, and remote sensing research
-
-  - name: geoviews
-    build:
-      noarch: python
     requirements:
       host:
         - python >=2.7
         - pip
         - param >=1.6.1,<2.0
+        - geoviews-core {{ version }}
       run:
         - python >=2.7
         - bokeh >=1.0.0
