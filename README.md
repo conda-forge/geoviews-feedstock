@@ -1,7 +1,3 @@
-<!--
-# -*- mode: jinja -*-
--->
-
 About geoviews-split
 ====================
 
@@ -18,8 +14,15 @@ Summary: GeoViews is a Python library that makes it easy to explore and visualiz
 Current build status
 ====================
 
-All platforms:
-[![noarch](https://img.shields.io/circleci/project/github/conda-forge/geoviews-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/geoviews-feedstock)
+
+<table><tr><td>All platforms:</td>
+    <td>
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3932&branchName=master">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geoviews-feedstock?branchName=master">
+      </a>
+    </td>
+  </tr>
+</table>
 
 Current release info
 ====================
