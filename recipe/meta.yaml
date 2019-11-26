@@ -1,4 +1,4 @@
-{% set version = "1.6.5" %}
+{% set version = "1.6.6" %}
 
 package:
   name: geoviews-split
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/g/geoviews/geoviews-{{ version }}.tar.gz
-  sha256: 3bd1eedbf0081d415daa41b9fcf176b4eae113df0f178f69a4c2f881c9003c01
+  sha256: 5b820b9610f9217327608c5022c9f4223abae335d12c8d9967994ccd17243c6d
 
 build:
   number: 0
