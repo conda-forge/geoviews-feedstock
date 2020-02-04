@@ -9,7 +9,7 @@ source:
   sha256: 5b820b9610f9217327608c5022c9f4223abae335d12c8d9967994ccd17243c6d
 
 build:
-  number: 0
+  number: 1
   noarch: python
 
 requirements:
@@ -29,7 +29,7 @@ requirements:
     - gdal
     - netcdf4
     - jupyter
-    - matplotlib >2.2
+    - matplotlib-base >2.2
     - pandas
     - pyct
     - scipy
@@ -83,7 +83,7 @@ outputs:
         - gdal
         - netcdf4
         - jupyter
-        - matplotlib >2.2
+        - matplotlib-base >2.2
         - pandas
         - pyct
         - scipy
