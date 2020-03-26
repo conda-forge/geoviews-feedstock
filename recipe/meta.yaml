@@ -17,11 +17,15 @@ requirements:
     - python >=2.7
     - pip
     - param >=1.6.1,<2.0
+    # These are also needed at build time.
+    - pyct
+    - bokeh >=1.4.0,2.0.0
+    - nodejs >=10.13.0
   run:
     - python >=2.7
-    - bokeh >=1.0.0
+    - bokeh >=1.4.0,<2.0.0
     - cartopy >=0.16.0
-    - holoviews >=1.11.1
+    - holoviews >=1.13.0
     - numpy >=1.0
     - param >=1.6.1,<2.0
     - datashader
@@ -50,11 +54,15 @@ outputs:
         - python >=2.7
         - pip
         - param >=1.6.1,<2.0
+        # These are also needed at build time.
+        - pyct
+        - bokeh >=1.4.0,<2.0.0
+        - nodejs >=10.13.0
       run:
         - python >=2.7
-        - bokeh >=1.0.0
+        - bokeh >=1.4.0,<2.0.0
         - cartopy >=0.16.0
-        - holoviews >=1.11.1
+        - holoviews >=1.13.0
         - numpy >=1.0
         - param >=1.6.1,<2.0
     test:
@@ -70,11 +78,15 @@ outputs:
         - pip
         - param >=1.6.1,<2.0
         - geoviews-core {{ version }}
+        # These are also needed at build time.
+        - pyct
+        - bokeh >=1.4.0,<2.0.0
+        - nodejs >=10.13.0
       run:
         - python >=2.7
-        - bokeh >=1.0.0
+        - bokeh >=1.4.0,<2.0.0
         - cartopy >=0.16.0
-        - holoviews >=1.11.1
+        - holoviews >=1.13.0
         - numpy >=1.0
         - param >=1.6.1,<2.0
         - geoviews-core {{ version }}
