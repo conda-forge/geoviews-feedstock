@@ -1,4 +1,4 @@
-{% set version = "1.6.6" %}
+{% set version = "1.7.0" %}
 
 package:
   name: geoviews-split
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/g/geoviews/geoviews-{{ version }}.tar.gz
-  sha256: 5b820b9610f9217327608c5022c9f4223abae335d12c8d9967994ccd17243c6d
+  sha256: 369fd3abcc19887746af96fc6a721cf19406e28c3f99f1ca9442c66dbdc281bb
 
 build:
-  number: 1
+  number: 0
   noarch: python
 
 requirements:
@@ -40,9 +40,9 @@ outputs:
   - name: geoviews-core
     build:
       noarch: python
-      script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+      script: {{ PYTHON }} -m pip install . --no-deps -vv
       entry_points:
-        - geoviews = geoviews.__main__:main       
+        - geoviews = geoviews.__main__:main
     requirements:
       run_constrained:
         - geoviews {{ version }}
@@ -103,17 +103,15 @@ outputs:
       home: http://geoviews.org
       license: BSD-3-Clause
       license_file: LICENSE
-      summary: GeoViews is a Python library that makes it easy to explore and visualize
-            geographical, meteorological, and oceanographic datasets, such as those used
-            in weather, climate, and remote sensing research.
+      summary: GeoViews is a Python library that makes it easy to explore and visualize geographical, meteorological, and oceanographic datasets, such as those used
+        in weather, climate, and remote sensing research.
 
 about:
   home: http://geoviews.org
   license: BSD-3-Clause
   license_file: LICENSE
-  summary: GeoViews is a Python library that makes it easy to explore and visualize
-        geographical, meteorological, and oceanographic datasets, such as those used
-        in weather, climate, and remote sensing research.
+  summary: GeoViews is a Python library that makes it easy to explore and visualize geographical, meteorological, and oceanographic datasets, such as those used in
+    weather, climate, and remote sensing research.
 extra:
   recipe-maintainers:
     - ocefpaf
