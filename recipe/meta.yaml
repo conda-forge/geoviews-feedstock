@@ -1,7 +1,7 @@
 {% set version = "1.7.0" %}
 
 package:
-  name: geoviews-split
+  name: geoviews-core
   version: {{ version }}
 
 source:
@@ -10,41 +10,12 @@ source:
 
 build:
   number: 0
-  noarch: python
-
-requirements:
-  host:
-    - python >=2.7
-    - pip
-    - param >=1.6.1,<2.0
-    # These are also needed at build time.
-    - pyct
-    - bokeh >=1.4.0,2.0.0
-    - nodejs >=10.13.0
-  run:
-    - python >=2.7
-    - bokeh >=1.4.0,<2.0.0
-    - cartopy >=0.16.0
-    - holoviews >=1.13.0
-    - numpy >=1.0
-    - param >=1.6.1,<2.0
-    - datashader
-    - geopandas
-    - gdal
-    - netcdf4
-    - jupyter
-    - matplotlib-base >2.2
-    - pandas
-    - pyct
-    - scipy
-    - shapely
-    - xarray
 
 outputs:
   - name: geoviews-core
+    script: build_base.sh
     build:
       noarch: python
-      script: {{ PYTHON }} -m pip install . --no-deps -vv
       entry_points:
         - geoviews = geoviews.__main__:main
     requirements:
@@ -53,18 +24,21 @@ outputs:
       host:
         - python >=2.7
         - pip
-        - param >=1.6.1,<2.0
-        # These are also needed at build time.
-        - pyct
+        - param >=1.9.0
+        # These are also needed at build time and declared in the pyproject.toml
+        - pyct >=0.4.4
         - bokeh >=1.4.0,<2.0.0
-        - nodejs >=10.13.0
+        - nodejs >=9.11.1
+        - wheel
+        - cartopy >=0.17.0
+        - setuptools >=30.3.0
       run:
         - python >=2.7
         - bokeh >=1.4.0,<2.0.0
-        - cartopy >=0.16.0
+        - cartopy >=0.17.0
         - holoviews >=1.13.0
-        - numpy >=1.0
-        - param >=1.6.1,<2.0
+        - numpy  >=1.0
+        - param >=1.9.2
     test:
       imports:
         - geoviews
@@ -73,34 +47,24 @@ outputs:
     build:
       noarch: python
     requirements:
-      host:
-        - python >=2.7
-        - pip
-        - param >=1.6.1,<2.0
-        - geoviews-core {{ version }}
-        # These are also needed at build time.
-        - pyct
-        - bokeh >=1.4.0,<2.0.0
-        - nodejs >=10.13.0
-      run:
-        - python >=2.7
-        - bokeh >=1.4.0,<2.0.0
-        - cartopy >=0.16.0
-        - holoviews >=1.13.0
-        - numpy >=1.0
-        - param >=1.6.1,<2.0
-        - geoviews-core {{ version }}
-        - datashader
-        - geopandas
-        - gdal
-        - netcdf4
-        - jupyter
-        - matplotlib-base >2.2
-        - pandas
-        - pyct
-        - scipy
-        - shapely
-        - xarray
+      - python >=2.7
+      - bokeh >=1.4.0,<2.0.0
+      - cartopy >=0.16.0
+      - holoviews >=1.13.0
+      - numpy >=1.0
+      - param >=1.6.1,<2.0
+      - {{ pin_subpackage('geoviews-core', max_pin="x.x.x.x") }}
+      - datashader
+      - geopandas
+      - gdal
+      - netcdf4
+      - jupyter
+      - matplotlib-base >2.2
+      - pandas
+      - pyct
+      - scipy
+      - shapely
+      - xarray
     test:
       imports:
         - geoviews
