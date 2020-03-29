@@ -1,5 +1,5 @@
-About geoviews-split
-====================
+About geoviews-core
+===================
 
 Home: http://geoviews.org
 
@@ -32,10 +32,10 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-geoviews-green.svg)](https://anaconda.org/conda-forge/geoviews) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/geoviews.svg)](https://anaconda.org/conda-forge/geoviews) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/geoviews.svg)](https://anaconda.org/conda-forge/geoviews) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/geoviews.svg)](https://anaconda.org/conda-forge/geoviews) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-geoviews--core-green.svg)](https://anaconda.org/conda-forge/geoviews-core) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/geoviews-core.svg)](https://anaconda.org/conda-forge/geoviews-core) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/geoviews-core.svg)](https://anaconda.org/conda-forge/geoviews-core) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/geoviews-core.svg)](https://anaconda.org/conda-forge/geoviews-core) |
 
-Installing geoviews-split
-=========================
+Installing geoviews-core
+========================
 
-Installing `geoviews-split` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `geoviews-core` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
@@ -92,17 +92,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating geoviews-split-feedstock
-=================================
+Updating geoviews-core-feedstock
+================================
 
-If you would like to improve the geoviews-split recipe or build a new
+If you would like to improve the geoviews-core recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/geoviews-split-feedstock are
+Note that all branches in the conda-forge/geoviews-core-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
