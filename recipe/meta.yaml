@@ -40,6 +40,10 @@ outputs:
         - numpy  >=1.0
         - param >=1.9.2
     test:
+      requires:
+        - pip
+      commands:
+        - pip check
       imports:
         - geoviews
 
