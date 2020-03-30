@@ -22,23 +22,23 @@ outputs:
       run_constrained:
         - geoviews {{ version }}
       host:
-        - python >=2.7
+        - python >=3.6
         - pip
         - param >=1.9.0
         # These are also needed at build time and declared in the pyproject.toml
         - pyct >=0.4.4
-        - bokeh >=1.4.0,<2.0.0
-        - nodejs >=9.11.1
+        - bokeh >=2.0.0
+        - nodejs >=10.13.0
         - wheel
         - cartopy >=0.17.0
         - setuptools >=30.3.0
       run:
-        - python >=2.7
-        - bokeh >=1.4.0,<2.0.0
+        - python >=3.6
+        - bokeh >=2.0.0
         - cartopy >=0.17.0
         - holoviews >=1.13.0
         - numpy  >=1.0
-        - param >=1.9.2
+        - param >=1.9.3
     test:
       requires:
         - pip
@@ -51,12 +51,12 @@ outputs:
     build:
       noarch: python
     requirements:
-      - python >=2.7
-      - bokeh >=1.4.0,<2.0.0
+      - python >=3.6
+      - bokeh >=2.0.0
       - cartopy >=0.16.0
       - holoviews >=1.13.0
       - numpy >=1.0
-      - param >=1.6.1,<2.0
+      - param >=1.9.3,<2.0
       - {{ pin_subpackage('geoviews-core', max_pin="x.x.x.x") }}
       - datashader
       - geopandas
