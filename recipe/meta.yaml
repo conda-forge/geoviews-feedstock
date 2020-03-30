@@ -53,21 +53,16 @@ outputs:
     requirements:
       - python >=3.6
       - bokeh >=2.0.0
-      - cartopy >=0.16.0
+      - cartopy >=0.17.0
       - holoviews >=1.13.0
       - numpy >=1.0
       - param >=1.9.3,<2.0
       - {{ pin_subpackage('geoviews-core', max_pin="x.x.x.x") }}
       - datashader
       - geopandas
-      - gdal
       - netcdf4
-      - jupyter
-      - matplotlib-base >2.2
       - pandas
       - pyct
-      - scipy
-      - shapely
       - xarray
     test:
       imports:
