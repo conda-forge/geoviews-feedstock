@@ -1,12 +1,12 @@
-{% set version = "1.8.1" %}
+{% set version = "1.8.2" %}
 
 package:
   name: geoviews-core
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/g/geoviews/geoviews-{{ version }}.tar.gz
-  sha256: 7cf0c43b01b4aa623520a233d5f82e58b69febd58e22af328128f699f1c745fe
+  url: https://github.com/holoviz/geoviews/archive/v{{ version }}.tar.gz
+  sha256: fb0eb2b7307c8aaafeca2709478a0455de1f49aec80bba8a6c363307570fae06
 
 build:
   number: 0
@@ -34,7 +34,7 @@ outputs:
         - setuptools >=30.3.0
       run:
         - python >=3.6
-        - bokeh >=2.0.0
+        - bokeh >=2.1.0
         - cartopy >=0.17.0
         - holoviews >=1.13.0
         - numpy  >=1.0
@@ -52,7 +52,7 @@ outputs:
       noarch: python
     requirements:
       - python >=3.6
-      - bokeh >=2.0.0
+      - bokeh >=2.1.0
       - cartopy >=0.17.0
       - holoviews >=1.13.0
       - numpy >=1.0
