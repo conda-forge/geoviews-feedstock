@@ -1,4 +1,4 @@
-{% set version = "1.8.2" %}
+{% set version = "1.9.1" %}
 
 package:
   name: geoviews-core
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/holoviz/geoviews/archive/v{{ version }}.tar.gz
-  sha256: fb0eb2b7307c8aaafeca2709478a0455de1f49aec80bba8a6c363307570fae06
+  sha256: 458bbe40b4bbf7bba5ef7b99d89a28618c024102545bc03687b6659368b335ed
 
 build:
   number: 0
@@ -78,15 +78,13 @@ outputs:
       home: http://geoviews.org
       license: BSD-3-Clause
       license_file: LICENSE
-      summary: GeoViews is a Python library that makes it easy to explore and visualize geographical, meteorological, and oceanographic datasets, such as those used
-        in weather, climate, and remote sensing research.
+      summary: GeoViews is a Python library that makes it easy to explore and visualize geographical, meteorological, and oceanographic datasets, such as those used in weather, climate, and remote sensing research.
 
 about:
   home: http://geoviews.org
   license: BSD-3-Clause
   license_file: LICENSE
-  summary: GeoViews is a Python library that makes it easy to explore and visualize geographical, meteorological, and oceanographic datasets, such as those used in
-    weather, climate, and remote sensing research.
+  summary: GeoViews is a Python library that makes it easy to explore and visualize geographical, meteorological, and oceanographic datasets, such as those used in weather, climate, and remote sensing research.
 extra:
   recipe-maintainers:
     - ocefpaf
