@@ -5,11 +5,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/holoviz/geoviews/archive/v{{ version }}.tar.gz
-  sha256: 458bbe40b4bbf7bba5ef7b99d89a28618c024102545bc03687b6659368b335ed
+  url: https://pypi.io/packages/source/g/geoviews/geoviews-{{ version }}.tar.gz
+  sha256: 058024d3c4fb29955c66cc4b0dd38830c688aafbb4babf2d5e0bcf9c49a9e1c4
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: geoviews-core
