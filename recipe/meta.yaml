@@ -1,4 +1,4 @@
-{% set version = "1.9.1" %}
+{% set version = "1.9.2" %}
 
 package:
   name: geoviews-core
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/g/geoviews/geoviews-{{ version }}.tar.gz
-  sha256: 058024d3c4fb29955c66cc4b0dd38830c688aafbb4babf2d5e0bcf9c49a9e1c4
+  sha256: 37af2e5d3ba457d3094a1de6dc7d71939325a6615f8b5b088a5c95cf18e176e2
 
 build:
-  number: 1
+  number: 0
 
 outputs:
   - name: geoviews-core
