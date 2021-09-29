@@ -1,7 +1,7 @@
 About geoviews-core
 ===================
 
-Home: http://geoviews.org
+Home: https://geoviews.org
 
 Package license: BSD-3-Clause
 
@@ -37,6 +37,7 @@ Installing `geoviews-core` from the `conda-forge` channel can be achieved by add
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
 Once the `conda-forge` channel has been enabled, `geoviews, geoviews-core` can be installed with:
