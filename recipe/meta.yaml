@@ -1,4 +1,4 @@
-{% set version = "1.9.1" %}
+{% set version = "1.9.2" %}
 
 package:
   name: geoviews-core
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/g/geoviews/geoviews-{{ version }}.tar.gz
-  sha256: 058024d3c4fb29955c66cc4b0dd38830c688aafbb4babf2d5e0bcf9c49a9e1c4
+  sha256: 37af2e5d3ba457d3094a1de6dc7d71939325a6615f8b5b088a5c95cf18e176e2
 
 build:
-  number: 1
+  number: 0
 
 outputs:
   - name: geoviews-core
@@ -22,19 +22,19 @@ outputs:
       run_constrained:
         - geoviews {{ version }}
       host:
-        - python >=3.6
+        - python >=3.7
         - pip
         - param >=1.9.0
         # These are also needed at build time and declared in the pyproject.toml
         - pyct >=0.4.4
-        - bokeh >=2.3.0,<2.4.0
+        - bokeh >=2.4.0,<2.5.0
         - nodejs >=10.13.0
         - wheel
         - cartopy >=0.18.0
         - setuptools >=30.3.0
       run:
-        - python >=3.6
-        - bokeh >=2.3.0,<2.4.0
+        - python >=3.7
+        - bokeh >=2.4.0,<2.5.0
         - cartopy >=0.18.0
         - holoviews >=1.14.2
         - numpy  >=1.0
@@ -51,15 +51,15 @@ outputs:
     build:
       noarch: python
     requirements:
-      - python >=3.6
-      - bokeh >=2.3.0,<2.4.0
+      - python >=3.7
+      - bokeh >=2.4.0,<2.5.0
       - cartopy >=0.18.0
       - holoviews >=1.14.2
       - numpy >=1.0
       - param >=1.9.3,<2.0
-      - {{ pin_subpackage('geoviews-core', max_pin="x.x.x.x") }}
+      - {{ pin_subpackage('geoviews-core', exact=True) }}
       - datashader
-      - geopandas
+      - geopandas-base
       - netcdf4
       - pandas
       - pyct
@@ -73,7 +73,7 @@ outputs:
       commands:
         - geoviews examples --path=. --force
         # just run one notebook for now; increase in the future if notebooks can be run quickly with test/tiny data
-        - pytest --nbsmoke-run -k ".ipynb" user_guide/Geometries.ipynb
+        - pytest --nbsmoke-run -k ".ipynb" user_guide/Projections.ipynb
     about:
       home: https://geoviews.org
       license: BSD-3-Clause
