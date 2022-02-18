@@ -39,6 +39,7 @@ outputs:
         - holoviews >=1.14.2
         - numpy  >=1.0
         - param >=1.9.3
+        - packaging
     test:
       requires:
         - pip
