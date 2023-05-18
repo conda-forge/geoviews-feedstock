@@ -1,91 +1,111 @@
-{% set version = "1.9.1" %}
+{% set version = "1.9.6" %}
+{% set name = "geoviews" %}
 
 package:
-  name: geoviews-core
+  name: {{ name }}-core
   version: {{ version }}
 
 source:
-  url: https://github.com/holoviz/geoviews/archive/v{{ version }}.tar.gz
-  sha256: 458bbe40b4bbf7bba5ef7b99d89a28618c024102545bc03687b6659368b335ed
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: e2ab66626fb57434ede7670ed8b2b2e8331919dbec78edb4d1d1646dfa0c73e7
 
 build:
   number: 0
+  #skip s390x as lack of nodejs and cartopy dependencies
+  skip: True  # [py<37 or s390x]
 
 outputs:
-  - name: geoviews-core
-    script: build_base.sh
+  - name: {{ name }}-core
+    script: build_base.sh # [not win]
+    script: build_base.bat # [win]
     build:
       noarch: python
       entry_points:
         - geoviews = geoviews.__main__:main
     requirements:
       run_constrained:
-        - geoviews {{ version }}
+        - {{ name }} {{ version }}
       host:
-        - python >=3.6
+        - python
         - pip
-        - param >=1.9.0
-        # These are also needed at build time and declared in the pyproject.toml
-        - pyct >=0.4.4
-        - bokeh >=2.3.0,<2.4.0
-        - nodejs >=10.13.0
+        - setuptools
         - wheel
-        - cartopy >=0.18.0
-        - setuptools >=30.3.0
+        - param 1.9.0
+        - pyct 0.5.0
+        - bokeh 2.4.3
+        - nodejs 16.13.1
+        - cartopy 0.21.1
+        
       run:
-        - python >=3.6
-        - bokeh >=2.3.0,<2.4.0
+        - bokeh >=2.4.0,<2.5.0
         - cartopy >=0.18.0
         - holoviews >=1.14.2
-        - numpy  >=1.0
+        - numpy >=1.0
         - param >=1.9.3
+        - packaging
     test:
       requires:
         - pip
       commands:
         - pip check
       imports:
-        - geoviews
+        - {{ name }}
 
-  - name: geoviews
+  - name: {{ name }}
     build:
       noarch: python
     requirements:
-      - python >=3.6
-      - bokeh >=2.3.0,<2.4.0
+      - python
+      - bokeh >=2.4.0,<2.5.0
       - cartopy >=0.18.0
       - holoviews >=1.14.2
       - numpy >=1.0
       - param >=1.9.3,<2.0
-      - {{ pin_subpackage('geoviews-core', max_pin="x.x.x.x") }}
+      - {{ pin_subpackage('geoviews-core', exact=True) }}
       - datashader
-      - geopandas
+      - geopandas-base
       - netcdf4
       - pandas
       - pyct
       - xarray
     test:
       imports:
-        - geoviews
+        - {{ name }}
       requires:
         - nbsmoke
         - pytest
       commands:
         - geoviews examples --path=. --force
         # just run one notebook for now; increase in the future if notebooks can be run quickly with test/tiny data
-        - pytest --nbsmoke-run -k ".ipynb" user_guide/Geometries.ipynb
+        - pytest --nbsmoke-run -k ".ipynb" user_guide/Projections.ipynb
     about:
       home: https://geoviews.org
       license: BSD-3-Clause
+      license_family: BSD
       license_file: LICENSE
       summary: GeoViews is a Python library that makes it easy to explore and visualize geographical, meteorological, and oceanographic datasets, such as those used in weather, climate, and remote sensing research.
+      description: |
+        GeoViews is built on the HoloViews library for building flexible visualizations of multidimensional data. 
+        GeoViews adds a family of geographic plot types based on the Cartopy library, 
+        plotted using either the Matplotlib or Bokeh packages.
+      doc_url: https://geoviews.org
+      dev_url: https://github.com/holoviz/geoviews
 
 about:
   home: https://geoviews.org
   license: BSD-3-Clause
+  license_family: BSD
   license_file: LICENSE
   summary: GeoViews is a Python library that makes it easy to explore and visualize geographical, meteorological, and oceanographic datasets, such as those used in weather, climate, and remote sensing research.
+  description: |
+    GeoViews is built on the HoloViews library for building flexible visualizations of multidimensional data. 
+    GeoViews adds a family of geographic plot types based on the Cartopy library, 
+    plotted using either the Matplotlib or Bokeh packages.
+  doc_url: https://geoviews.org
+  dev_url: https://github.com/holoviz/geoviews
 extra:
   recipe-maintainers:
     - ocefpaf
     - philippjfr
+    - maximlt
+    - Hoxbro
