@@ -42,7 +42,7 @@ outputs:
         - cartopy >=0.18.0
         - holoviews >=1.14.2
         - numpy
-        - param >=1.9.3
+        - param >=1.9.2
         - scipy
     test:
       requires:
@@ -67,7 +67,7 @@ outputs:
         - cartopy >=0.18.0
         - holoviews >=1.14.2
         - numpy
-        - param >=1.9.3,<2.0
+        - param >=1.9.2,<2.0
         - {{ pin_subpackage('geoviews-core', exact=True) }}
         - datashader
         - geopandas-base
