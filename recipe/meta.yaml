@@ -19,6 +19,7 @@ outputs:
     script: build_base.sh # [not win]
     script: build_base.bat # [win]
     build:
+      noarch: python
       entry_points:
         - geoviews = geoviews.__main__:main
     requirements:
@@ -53,6 +54,7 @@ outputs:
 
   - name: {{ name }}
     build:
+      noarch: python
     requirements:
       host:
         - python
