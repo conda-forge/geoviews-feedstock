@@ -41,7 +41,7 @@ outputs:
         - bokeh >=2.4.0,<2.5.0
         - cartopy >=0.18.0
         - holoviews >=1.14.2
-        - numpy >=1.0
+        - numpy
         - param >=1.9.3
         - scipy
     test:
@@ -66,7 +66,7 @@ outputs:
         - bokeh >=2.4.0,<2.5.0
         - cartopy >=0.18.0
         - holoviews >=1.14.2
-        - numpy >=1.0
+        - numpy
         - param >=1.9.3,<2.0
         - {{ pin_subpackage('geoviews-core', exact=True) }}
         - datashader
