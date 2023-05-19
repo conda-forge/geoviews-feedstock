@@ -71,7 +71,6 @@ outputs:
         - pyct
         - xarray
         - shapely
-        - scipy
         - pooch
     test:
       imports:
