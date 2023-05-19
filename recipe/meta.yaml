@@ -19,7 +19,6 @@ outputs:
     script: build_base.sh # [not win]
     script: build_base.bat # [win]
     build:
-      noarch: python
       entry_points:
         - geoviews = geoviews.__main__:main
     requirements:
@@ -36,10 +35,11 @@ outputs:
         - bokeh 2.4.3
         - nodejs 16.13.1
         - pyviz_comms 0.7.2
+        - cartopy 0.21.1
       run:
         - python
         - bokeh >=2.4.0,<2.5.0
-        - cartopy >=0.18.0
+        - cartopy >=0.21.1
         - holoviews >=1.14.2
         - numpy
         - param >=1.9.2,<2.0
@@ -53,8 +53,6 @@ outputs:
         - {{ name }}
 
   - name: {{ name }}
-    build:
-      noarch: python
     requirements:
       host:
         - python
@@ -71,6 +69,7 @@ outputs:
         - pyct
         - xarray
         - shapely
+        - scipy
         - pooch
     test:
       imports:
