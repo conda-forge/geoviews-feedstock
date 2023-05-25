@@ -79,6 +79,7 @@ outputs:
         - nbsmoke
         - pytest
       commands:
+        - pip check
         - geoviews examples --path=. --force
         # just run one notebook for now; increase in the future if notebooks can be run quickly with test/tiny data
         - pytest --nbsmoke-run -k ".ipynb" user_guide/Projections.ipynb
