@@ -1,11 +1,11 @@
-About geoviews-core
-===================
+About geoviews-core-feedstock
+=============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/geoviews-feedstock/blob/main/LICENSE.txt)
 
 Home: https://geoviews.org
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/geoviews-feedstock/blob/main/LICENSE.txt)
 
 Summary: GeoViews is a Python library that makes it easy to explore and visualize geographical, meteorological, and oceanographic datasets, such as those used in weather, climate, and remote sensing research.
 
@@ -144,6 +144,8 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@Hoxbro](https://github.com/Hoxbro/)
+* [@maximlt](https://github.com/maximlt/)
 * [@ocefpaf](https://github.com/ocefpaf/)
 * [@philippjfr](https://github.com/philippjfr/)
 
