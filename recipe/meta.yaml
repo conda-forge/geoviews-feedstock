@@ -1,4 +1,4 @@
-{% set version = "1.9.6" %}
+{% set version = "1.10.0" %}
 
 package:
   name: geoviews-core
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/g/geoviews/geoviews-{{ version }}.tar.gz
-  sha256: e2ab66626fb57434ede7670ed8b2b2e8331919dbec78edb4d1d1646dfa0c73e7
+  sha256: f38bdfb539ef0c7e478b1237dcc7a2fa796d814b1860c4f5b5190b541cd69036
 
 build:
   number: 0
@@ -22,23 +22,25 @@ outputs:
       run_constrained:
         - geoviews {{ version }}
       host:
-        - python >=3.7
+        - python >=3.8
         - pip
         - param >=1.9.0
         # These are also needed at build time and declared in the pyproject.toml
         - pyct >=0.4.4
-        - bokeh >=2.4.0,<2.5.0
+        - bokeh >=3.1.0,<3.2.0
         - nodejs >=10.13.0
         - wheel
         - cartopy >=0.18.0
         - setuptools >=30.3.0
       run:
-        - python >=3.7
-        - bokeh >=2.4.0,<2.5.0
+        - python >=3.8
+        - bokeh >=3.1.0,<3.2.0
         - cartopy >=0.18.0
-        - holoviews >=1.14.2
+        - holoviews >=1.16.0
         - numpy  >=1.0
         - param >=1.9.3
+        - panel >=1.0.0
+        - pyproj
         - packaging
     test:
       requires:
@@ -52,12 +54,15 @@ outputs:
     build:
       noarch: python
     requirements:
-      - python >=3.7
-      - bokeh >=2.4.0,<2.5.0
+      - python >=3.8
+      - bokeh >=3.1.0,<3.2.0
       - cartopy >=0.18.0
-      - holoviews >=1.14.2
-      - numpy >=1.0
-      - param >=1.9.3,<2.0
+      - holoviews >=1.16.0
+      - numpy  >=1.0
+      - param >=1.9.3
+      - panel >=1.0.0
+      - pyproj
+      - packaging
       - {{ pin_subpackage('geoviews-core', exact=True) }}
       - datashader
       - geopandas-base
