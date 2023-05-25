@@ -78,6 +78,7 @@ outputs:
       requires:
         - nbsmoke
         - pytest
+        - pip
       commands:
         - pip check
         - geoviews examples --path=. --force
