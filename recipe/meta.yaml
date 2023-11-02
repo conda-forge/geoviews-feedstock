@@ -22,19 +22,19 @@ outputs:
       run_constrained:
         - geoviews {{ version }}
       host:
-        - python >=3.8
+        - python >=3.9
         - pip
         - param >=1.9.0
         # These are also needed at build time and declared in the pyproject.toml
         - pyct >=0.4.4
-        - bokeh >=3.1.0,<3.3.0
+        - bokeh =3.3
         - nodejs >=10.13.0
         - wheel
         - cartopy >=0.18.0
         - setuptools >=30.3.0
       run:
-        - python >=3.8
-        - bokeh >=3.1.0,<3.3.0
+        - python >=3.9
+        - bokeh >=3.2.0,<3.4.0
         - cartopy >=0.18.0
         - holoviews >=1.16.0
         - numpy  >=1.0
@@ -54,8 +54,8 @@ outputs:
     build:
       noarch: python
     requirements:
-      - python >=3.8
-      - bokeh >=3.1.0,<3.3.0
+      - python >=3.9
+      - bokeh >=3.2.0,<3.4.0
       - cartopy >=0.18.0
       - holoviews >=1.16.0
       - numpy  >=1.0
