@@ -93,6 +93,7 @@ about:
   summary: GeoViews is a Python library that makes it easy to explore and visualize geographical, meteorological, and oceanographic datasets, such as those used in weather, climate, and remote sensing research.
 extra:
   recipe-maintainers:
+    - ahuang11
     - ocefpaf
     - philippjfr
     - maximlt
