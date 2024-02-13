@@ -79,7 +79,7 @@ outputs:
       commands:
         - geoviews examples --path=. --force
         # just run one notebook for now; increase in the future if notebooks can be run quickly with test/tiny data
-        - pytest examples/user_guide/Projections.ipynb --nbval-lax
+        - pytest --nbval-lax -k Projections.ipynb
     about:
       home: https://geoviews.org
       license: BSD-3-Clause
