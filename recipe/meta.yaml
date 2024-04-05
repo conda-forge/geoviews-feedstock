@@ -1,4 +1,4 @@
-{% set version = "1.11.1" %}
+{% set version = "1.12.0" %}
 
 package:
   name: geoviews-core
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/g/geoviews/geoviews-{{ version }}.tar.gz
-  sha256: 6c65e2122c8b62ee7985bb956369d05953c7704081f90b686a0fdfaf20933d2b
+  sha256: e2cbef0605e8fd1529bc643a31aeb61997f8f93c9b41a5aff8b2b355a76fa789
 
 build:
   number: 0
@@ -27,14 +27,14 @@ outputs:
         - param >=1.9.0
         # These are also needed at build time and declared in the pyproject.toml
         - pyct >=0.4.4
-        - bokeh =3.3
-        - nodejs >=10.13.0
+        - bokeh =3.4
+        - nodejs >=20
         - wheel
         - cartopy >=0.18.0
         - setuptools >=30.3.0
       run:
         - python >=3.9
-        - bokeh >=3.2.0,<3.4.0
+        - bokeh >=3.4.0,<3.5.0
         - cartopy >=0.18.0
         - holoviews >=1.16.0
         - numpy  >=1.0
@@ -55,7 +55,7 @@ outputs:
       noarch: python
     requirements:
       - python >=3.9
-      - bokeh >=3.2.0,<3.4.0
+      - bokeh >=3.4.0,<3.5.0
       - cartopy >=0.18.0
       - holoviews >=1.16.0
       - numpy  >=1.0
