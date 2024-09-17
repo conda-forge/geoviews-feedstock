@@ -26,7 +26,7 @@ outputs:
         - pip
         # These are also needed at build time and declared in the pyproject.toml
         - bokeh =3.5
-        - nodes >=20
+        - nodejs >=20
         - hatchling
         - hatch-vcs
       run:
