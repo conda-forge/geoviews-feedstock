@@ -15,7 +15,7 @@ outputs:
   - name: geoviews-core
     build:
       noarch: python
-      script: {{ PYTHON }} -m pip install . --no-deps -vv
+      script: python -m pip install . --no-deps -vv
       entry_points:
         - geoviews = geoviews.__main__:main
     requirements:
