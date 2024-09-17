@@ -13,7 +13,7 @@ build:
 
 outputs:
   - name: geoviews-core
-    script: build_base.sh
+    script: ${PYTHON} -m pip install . --no-deps -vv
     build:
       noarch: python
       entry_points:
