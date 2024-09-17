@@ -22,26 +22,25 @@ outputs:
       run_constrained:
         - geoviews {{ version }}
       host:
-        - python >=3.9
+        - python >=3.10
         - pip
-        - param >=1.9.0
         # These are also needed at build time and declared in the pyproject.toml
-        - pyct >=0.4.4
-        - bokeh =3.4
-        - nodejs >=20
-        - wheel
-        - cartopy >=0.18.0
-        - setuptools >=30.3.0
+        - bokeh =3.5
+        - nodes >=20
+        - hatchling
+        - hatch-vcs
       run:
-        - python >=3.9
-        - bokeh >=3.4.0,<3.5.0
+        - python >=3.10
+        - bokeh >=3.5.0,<3.6.0
         - cartopy >=0.18.0
         - holoviews >=1.16.0
-        - numpy  >=1.0
-        - param >=1.9.3
-        - panel >=1.0.0
-        - pyproj
+        - numpy >=1.0
         - packaging
+        - panel >=1.0.0
+        - param >=1.9.3
+        - pyproj
+        - shapely
+        - xyzservices
     test:
       requires:
         - pip
@@ -54,15 +53,17 @@ outputs:
     build:
       noarch: python
     requirements:
-      - python >=3.9
-      - bokeh >=3.4.0,<3.5.0
+      - python >=3.10
+      - bokeh >=3.5.0,<3.6.0
       - cartopy >=0.18.0
       - holoviews >=1.16.0
-      - numpy  >=1.0
-      - param >=1.9.3
-      - panel >=1.0.0
-      - pyproj
+      - numpy >=1.0
       - packaging
+      - panel >=1.0.0
+      - param >=1.9.3
+      - pyproj
+      - shapely
+      - xyzservices
       - {{ pin_subpackage('geoviews-core', exact=True) }}
       - datashader
       - geopandas-base
