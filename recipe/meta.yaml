@@ -53,17 +53,6 @@ outputs:
     build:
       noarch: python
     requirements:
-      - python >=3.10
-      - bokeh >=3.5.0,<3.6.0
-      - cartopy >=0.18.0
-      - holoviews >=1.16.0
-      - numpy >=1.0
-      - packaging
-      - panel >=1.0.0
-      - param >=1.9.3
-      - pyproj
-      - shapely
-      - xyzservices
       - {{ pin_subpackage('geoviews-core', exact=True) }}
       - datashader
       - geopandas-base
