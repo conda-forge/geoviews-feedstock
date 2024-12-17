@@ -10,7 +10,7 @@ source:
   sha256: d1cdb21bcde8ddf2a7f88df1506395a86f6e708bcf9289c5551d5a095200167f
 
 build:
-  number: 1
+  number: 0
 
 outputs:
   - name: geoviews-core
