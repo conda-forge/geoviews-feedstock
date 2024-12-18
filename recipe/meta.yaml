@@ -1,5 +1,5 @@
-{% set python_min = '3.10' %}
-{% set version = "1.13.1" %}
+{% set python_min = "3.10" %}
+{% set version = "1.14.0" %}
 
 package:
   name: geoviews-core
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/g/geoviews/geoviews-{{ version }}.tar.gz
-  sha256: d1cdb21bcde8ddf2a7f88df1506395a86f6e708bcf9289c5551d5a095200167f
+  sha256: 3cca679a32b2c97215424a3a154e3fa343f61e2589d15e333e493bdf2f62fc6a
 
 build:
   number: 0
@@ -26,13 +26,13 @@ outputs:
         - python {{ python_min }}
         - pip
         # These are also needed at build time and declared in the pyproject.toml
-        - bokeh =3.5
+        - bokeh =3.6
         - nodejs >=20
         - hatchling
         - hatch-vcs
       run:
         - python >={{ python_min }}
-        - bokeh >=3.5.0,<3.6.0
+        - bokeh >=3.6.0
         - cartopy >=0.18.0
         - holoviews >=1.16.0
         - numpy >=1.0
