@@ -54,8 +54,6 @@ outputs:
   - name: geoviews
     build:
       noarch: python
-    host:
-      - python {{ python_min }}
     requirements:
       - python >={{ python_min }}
       - {{ pin_subpackage('geoviews-core', exact=True) }}
