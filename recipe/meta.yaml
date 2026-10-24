@@ -1,13 +1,13 @@
 {% set python_min = "3.10" %}
-{% set version = "1.15.1" %}
+{% set version = "1.16.0" %}
 
 package:
   name: geoviews-core
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/g/geoviews/geoviews-{{ version }}.tar.gz
-  sha256: c72097ef4f24895c46f95834e5c19ac185ea1c34fd610f0f956421ba515d4aad
+  url: https://files.pythonhosted.org/packages/source/g/geoviews/geoviews-{{ version }}.tar.gz
+  sha256: 7ce377c3a7aedc1aaf1a97f412be514d9bc426acfbe671d703b369a2b99a1784
 
 build:
   number: 0
