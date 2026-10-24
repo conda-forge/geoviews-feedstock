@@ -1,13 +1,13 @@
-{% set python_min = "3.10" %}
-{% set version = "1.15.1" %}
+{% set python_min = "3.12" %}
+{% set version = "1.16.0" %}
 
 package:
   name: geoviews-core
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/g/geoviews/geoviews-{{ version }}.tar.gz
-  sha256: c72097ef4f24895c46f95834e5c19ac185ea1c34fd610f0f956421ba515d4aad
+  url: https://files.pythonhosted.org/packages/source/g/geoviews/geoviews-{{ version }}.tar.gz
+  sha256: 7ce377c3a7aedc1aaf1a97f412be514d9bc426acfbe671d703b369a2b99a1784
 
 build:
   number: 0
@@ -17,8 +17,6 @@ outputs:
     build:
       noarch: python
       script: python -m pip install . --no-deps -vv
-      entry_points:
-        - geoviews = geoviews.__main__:main
     requirements:
       run_constrained:
         - geoviews {{ version }}
@@ -26,18 +24,18 @@ outputs:
         - python {{ python_min }}
         - pip
         # These are also needed at build time and declared in the pyproject.toml
-        - bokeh =3.8
+        - bokeh =3.10
         - nodejs >=20
         - hatchling
         - hatch-vcs
       run:
         - python >={{ python_min }}
-        - bokeh >=3.8.0
+        - bokeh >=3.10.0
         - cartopy >=0.18.0
         - holoviews >=1.16.0
         - numpy >=1.0
         - packaging
-        - panel >=1.0.0
+        - panel >=1.10.0
         - param >=1.9.3,<3.0
         - pyproj
         - shapely >=1.8.0
@@ -55,25 +53,25 @@ outputs:
     build:
       noarch: python
     requirements:
-      - python >={{ python_min }}
-      - {{ pin_subpackage('geoviews-core', exact=True) }}
-      - datashader
-      - geopandas-base
-      - netcdf4
-      - pandas
-      - pyct
-      - xarray
+      host:
+        - python {{ python_min }}
+      run:
+        - python >={{ python_min }}
+        - {{ pin_subpackage('geoviews-core', exact=True) }}
+        - datashader
+        - geopandas-base
+        - netcdf4
+        - pandas
+        - pyct
+        - xarray
     test:
       imports:
         - geoviews
       requires:
-        - nbval
-        - pytest
         - python {{ python_min }}
+        - pip
       commands:
-        - geoviews examples --path=. --force
-        # just run one notebook for now; increase in the future if notebooks can be run quickly with test/tiny data
-        - pytest --nbval-lax -k Projections.ipynb
+        - pip check
     about:
       home: https://geoviews.org
       license: BSD-3-Clause
@@ -91,4 +89,4 @@ extra:
     - ocefpaf
     - philippjfr
     - maximlt
-    - Hoxbro
+    - hoxbro
